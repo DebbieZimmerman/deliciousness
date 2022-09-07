@@ -2,9 +2,14 @@ import styled from "styled-components";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
+import Checkbox from "./Checkbox"
+import { diet } from "../utils/diet";
+import { intolerances } from "../utils/intolerances";
+import { cuisine } from "../utils/cuisine";
 
 function Search() {
   const [input, setInput] = useState("")
+
   const navigate = useNavigate()
 
   const submitHandler = (e) => {
@@ -13,7 +18,7 @@ function Search() {
   }
 
   return (
-    <FormStyled onSubmit={submitHandler}>
+    <FormStyled onSubmit={submitHandler} >
       <div>
         <FaSearch></FaSearch>
         <input
@@ -22,12 +27,22 @@ function Search() {
           value={input}
         />
       </div>
+      <div>
+        <Grid>
+          {diet.map((type) => {
+            return(
+              <Checkbox label={type.displayTerm} />
+            )
+          })}
+        </Grid>
+      </div>
     </FormStyled>
   );
 }
 
 const FormStyled = styled.form`
-    margin: 1rem 5rem;
+    padding: 1rem 20vw;
+    background: green;
     justify-content: center;
     align-items:center;
         
@@ -38,10 +53,12 @@ const FormStyled = styled.form`
     }
     input{
         padding: .5rem 2rem;
+        margin-left: .5rem;
         border: none;
-        background: linear-gradient(35deg, #8B939A, #5B6467);
+        box-shadow: .5px 1px 1px .5px #043A08;
+        background: none;
         font-size: 1.5rem;
-        color: white;
+        color: dark-gray;
         border-radius: 1rem;
         outline: none;
         width: 100%;
@@ -52,8 +69,27 @@ const FormStyled = styled.form`
         top: 50%;
         left: 0%;
         transform: translate(100%, -50%);
-        color: white;
+        color: #043A08;
     }
+`;
+
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+  grid-gap: 1 vh;
+
+  input{
+    padding: .5rem .5rem;
+    margin-left: .5rem;
+    border: none;
+    box-shadow: .5px 1px 1px .5px #075F0D;
+    background: none;
+    font-size: 1.5rem;
+    color: dark-gray;
+    border-radius: 1rem;
+    outline: none;
+    width: 100%;
+}
 `;
 
 export default Search;
