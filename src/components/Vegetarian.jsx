@@ -59,7 +59,7 @@ function Vegetarian() {
 }
 
 const Wrapper = styled.div`
-  margin: 4rem 0rem;
+  margin: 10vh 10vw;
 `;
 const Card = styled.div`
   min-height: 12rem;

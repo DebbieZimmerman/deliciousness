@@ -1,7 +1,6 @@
 *{
   margin: 0;
   padding: 0;
-  
   box-sizing: border-box;
   font-family:"Montserrat", sans-serif;
 }
@@ -14,7 +13,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin: 0% 5%;
+  
 }
 
 code {
@@ -75,7 +74,7 @@ label + p {
 }
 
 input.checked {
-  background-color: #63ff3c;
+  background-color: #F27121;
   position: relative;
 }
 

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
+import Category from "./Category";
 import Checkbox from "./Checkbox"
 import { diet } from "../utils/diet";
 import { intolerances } from "../utils/intolerances";
@@ -27,7 +28,7 @@ function Search() {
           value={input}
         />
       </div>
-      <div>
+      {/* <div>
         <Grid>
           {diet.map((type) => {
             return(
@@ -35,14 +36,12 @@ function Search() {
             )
           })}
         </Grid>
-      </div>
+      </div> */}
     </FormStyled>
   );
 }
 
 const FormStyled = styled.form`
-    padding: 1rem 20vw;
-    background: green;
     justify-content: center;
     align-items:center;
         
@@ -55,8 +54,8 @@ const FormStyled = styled.form`
         padding: .5rem 2rem;
         margin-left: .5rem;
         border: none;
-        box-shadow: .5px 1px 1px .5px #043A08;
-        background: none;
+        box-shadow: .5px 1px 1px .5px #FACF0F;
+        background: white;
         font-size: 1.5rem;
         color: dark-gray;
         border-radius: 1rem;
@@ -69,7 +68,7 @@ const FormStyled = styled.form`
         top: 50%;
         left: 0%;
         transform: translate(100%, -50%);
-        color: #043A08;
+        color: #FACF0F;
     }
 `;
 
@@ -82,8 +81,8 @@ const Grid = styled.div`
     padding: .5rem .5rem;
     margin-left: .5rem;
     border: none;
-    box-shadow: .5px 1px 1px .5px #075F0D;
-    background: none;
+    box-shadow: .5px 1px 1px .5px #FACF0F;
+    background: white;
     font-size: 1.5rem;
     color: dark-gray;
     border-radius: 1rem;
